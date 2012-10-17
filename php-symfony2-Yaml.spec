@@ -1,35 +1,39 @@
-%include	/usr/lib/rpm/macros.php
 %define		status		stable
-%define		pearname	YAML
-Summary:	%{pearname} - The Symfony YAML Component
-Name:		php-symfony-YAML
-Version:	1.0.6
+%define		pearname	Yaml
+%include	/usr/lib/rpm/macros.php
+Summary:	%{pearname} - Symfony2 Yaml Component
+Name:		php-symfony2-Yaml
+Version:	2.1.2
 Release:	1
-License:	MIT license
+License:	MIT
 Group:		Development/Languages/PHP
-Source0:	http://pear.symfony-project.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	9f010ddb236e1495ad3b9c42fbab9223
-URL:		http://pear.symfony-project.com/package/YAML/
-BuildRequires:	php-channel(pear.symfony-project.com)
-BuildRequires:	php-packagexml2cl
+Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
+# Source0-md5:	85b7c9272413501386a468cf0dc09a70
+URL:		http://pear.symfony.com/package/Yaml/
+BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.580
-Requires:	php-channel(pear.symfony-project.com)
+BuildRequires:	rpmbuild(macros) >= 1.610
+Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Symfony YAML Component.
+Symfony2 Yaml Component
 
 In PEAR status of this package is: %{status}.
 
 %prep
 %pear_package_setup
 
-%build
-packagexml2cl package.xml > ChangeLog
+# no packaging of tests
+rm -r .%{php_pear_dir}/Symfony/Component/Yaml/Tests
+
+# fixups
+mv .%{php_pear_dir}/Symfony/Component/Yaml/CHANGELOG.md .
+mv .%{php_pear_dir}/Symfony/Component/Yaml/phpunit.xml{.dist,}
+mv docs/Yaml/Symfony/Component/Yaml/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,9 +45,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog install.log
-%doc docs/YAML/*
+%doc CHANGELOG.md LICENSE README.md install.log
 %{php_pear_dir}/.registry/.channel.*/*.reg
-# XXX: who owns
-%dir %{php_pear_dir}/SymfonyComponents
-%{php_pear_dir}/SymfonyComponents/YAML
+# XXX proper dirs
+%dir %{php_pear_dir}/Symfony
+%dir %{php_pear_dir}/Symfony/Component
+%dir %{php_pear_dir}/Symfony/Component/Yaml
+%{php_pear_dir}/Symfony/Component/Yaml/Exception
+%{php_pear_dir}/Symfony/Component/Yaml/*.php
+%{php_pear_dir}/Symfony/Component/Yaml/phpunit.xml
