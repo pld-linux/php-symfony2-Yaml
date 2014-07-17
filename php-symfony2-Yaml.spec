@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Yaml Component
 Name:		php-symfony2-Yaml
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	1266c8cccd5f4fe707874d4c018cf45e
+# Source0-md5:	8cfa073190f1fb3ebf36e64cb5ce784d
 URL:		http://symfony.com/doc/2.4/components/yaml/introduction.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
