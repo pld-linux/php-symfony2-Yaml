@@ -4,7 +4,7 @@
 Summary:	Symfony2 Yaml Component
 Name:		php-symfony2-Yaml
 Version:	2.7.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
@@ -20,7 +20,7 @@ Requires:	php(json)
 Requires:	php(mbstring)
 Requires:	php(pcre)
 Requires:	php(spl)
-Requires:	php-pear >= 1.3.10
+Requires:	php-pear >= 4:1.3.10
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
