@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Yaml Component
 Name:		php-symfony2-Yaml
-Version:	2.7.5
+Version:	2.7.7
 Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	bc2f4f80c1f9fd341ca06611fb1309b5
+# Source0-md5:	a4d1ef400e714e92718bf9b248ce39f2
 URL:		http://symfony.com/doc/2.7/components/yaml/introduction.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -31,7 +31,7 @@ The YAML Component loads and dumps YAML files.
 %setup -q -n yaml-%{version}
 
 %build
-phpab -n -e '*/Tests/*' -o autoloader.php .
+phpab -n -e '*/Tests/*' -o autoload.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
