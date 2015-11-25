@@ -11,7 +11,6 @@ Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{
 # Source0-md5:	a4d1ef400e714e92718bf9b248ce39f2
 URL:		http://symfony.com/doc/2.7/components/yaml/introduction.html
 BuildRequires:	phpab
-BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(ctype)
@@ -20,7 +19,6 @@ Requires:	php(json)
 Requires:	php(mbstring)
 Requires:	php(pcre)
 Requires:	php(spl)
-Requires:	php-pear >= 4:1.3.10
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
