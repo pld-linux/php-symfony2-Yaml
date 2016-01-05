@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Yaml Component
 Name:		php-symfony2-Yaml
-Version:	2.7.7
-Release:	2
+Version:	2.7.8
+Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	a4d1ef400e714e92718bf9b248ce39f2
+# Source0-md5:	a522f9506497e04d521b3634b54c7745
 URL:		http://symfony.com/doc/2.7/components/yaml/introduction.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
