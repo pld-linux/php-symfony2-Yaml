@@ -1,6 +1,5 @@
 %define		package	Yaml
 %define		php_min_version 5.3.9
-%include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 Yaml Component
 Name:		php-symfony2-Yaml
 Version:	2.7.8
